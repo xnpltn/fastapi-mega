@@ -14,7 +14,7 @@ router = APIRouter(
 )
 
 
-@router.post("/signup", response_model=UserResponce)
+@router.post("/signup", response_model=UserResponce, status_code=status.HTTP_201_CREATED)
 def signup(user: User, db: Session = Depends(get_db)):
 
     user.password = pass_incryptor(user.password)

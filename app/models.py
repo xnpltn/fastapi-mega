@@ -15,8 +15,6 @@ class Todo(Base):
     owner_id = Column(Integer, ForeignKey("users.id", ondelete="CASCADE"), nullable=False)
     owner = relationship("User")
 
-    class Config:
-        orm_mode = True
 
 
 class User(Base):
